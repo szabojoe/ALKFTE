@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Race Details</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+</head>
+<body>
+<h1 th:text="${race.raceName}"></h1>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Participant_Id</th>
+    <th>time_minutes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="result : ${race.result}">
+    <td th:text="${result.runnerName}"></td>
+    <td th:text="${result.resultTime}"></td>
+  </tr>
+  </tbody>
+</table>
+
+<a href="/" class="btn btn-info">Back to Races</a>
+</body>
+</html>
