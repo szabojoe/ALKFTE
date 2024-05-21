@@ -48,4 +48,12 @@ public class ResultController {
         return ResponseEntity.ok("Result added successfully");
 
     }
+
+    @GetMapping("/getAverageTime/{id}")
+    public double getAverageTime(@PathVariable Long id){
+        List<Result> results = resultRepository.findByRaceId(id);
+
+        return results.stream().mapToDouble(Result::getResultTime).average().orElse(-1.0);
+
+    }
 }

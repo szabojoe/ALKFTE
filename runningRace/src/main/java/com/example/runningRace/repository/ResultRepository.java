@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ResultRepository extends JpaRepository<Result, Long> {
     List<Result> findByRaceIdOrderByResultTimeAsc(Long raceId);
+    List<Result> findByRaceId(Long raceId);
 }
