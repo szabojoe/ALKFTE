@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -28,6 +29,13 @@ public class ResultWebController {
         newRace.setRaceDist(distance);
         raceRepository.save(newRace);
         return "redirect:/";
+    }
+
+    @GetMapping("/raceDetails/{id}")
+    public String getRaceDetails(@PathVariable Long id, Model model){
+        Race race = raceRepository.findById(id).orElse(null);
+        model.addAttribute("race",race);
+        return "raceDetails";
     }
 
 }
