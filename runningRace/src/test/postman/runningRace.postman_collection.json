@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "29d604c9-abea-4cf4-a26b-ba706fadd720",
+		"name": "runningRace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35025025"
+	},
+	"item": [
+		{
+			"name": "getRunners",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/runners/getRunners",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"runners",
+						"getRunners"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addRunner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"runnerName\":\"Sanyi\",\r\n    \"runnerGender\":\"ffi\",\r\n    \"runnerAge\":21\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/runners/addRunner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"runners",
+						"addRunner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addResult",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resultParticipantId\" : 1,\r\n    \"resultRaceId\" : 2,\r\n    \"resultTime\" : 50\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/results/addResult",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"results",
+						"addResult"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateRace",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"raceId\":1,\r\n    \"raceName\":\"uj\",\r\n    \"raceDist\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/races/updateRace",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"races",
+						"updateRace"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRaceRunners",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/results/getRaceRunners/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"results",
+						"getRaceRunners",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAverageTime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/results/getAverageTime/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"results",
+						"getAverageTime",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
