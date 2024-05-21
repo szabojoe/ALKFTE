@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Races</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+</head>
+<body>
+<h1>Races</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Distance</th>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="race : ${races}">
+        <td th:text="${race.raceId}"></td>
+        <td th:text="${race.raceDist}"></td>
+        <td th:text="${race.raceName}"></td>
+        <td>
+            <a th:href="@{/raceDetails/{id}(id=${race.raceId})}" class="btn btn-primary">View</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/createRace" method="post">
+    <div class="form-group">
+        <label for="raceName">Race Name:</label>
+        <input type="text" class="form-control" id="raceName" name="name" placeholder="Enter race name">
+        <label for="raceDist">Race Distance:</label>
+        <input type="text" class="form-control" id="raceDist" name="distance" placeholder="Enter race distance">
+    </div>
+    <button type="submit" class="btn btn-success">Create Race</button>
+</form>
+</body>
+</html>
