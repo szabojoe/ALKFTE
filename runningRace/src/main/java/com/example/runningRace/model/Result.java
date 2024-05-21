@@ -43,4 +43,12 @@ public class Result {
     public void setRaceId(Long raceId) {
         this.raceId = raceId;
     }
+
+    public void setResultParticipantId(Long runnerId) {
+        this.runnerId = runnerId;
+    }
+
+    public void setResultRaceId(Long raceId) {
+        this.raceId = raceId;
+    }
 }

@@ -11,6 +11,25 @@ public class Runner {
     @Column(name = "runnerName")
     private String runnerName;
 
+    private String runnerGender;
+    private int runnerAge;
+
+    public String getRunnerGender() {
+        return runnerGender;
+    }
+
+    public void setRunnerGender(String runnerGender) {
+        this.runnerGender = runnerGender;
+    }
+
+    public int getRunnerAge() {
+        return runnerAge;
+    }
+
+    public void setRunnerAge(int runnerAge) {
+        this.runnerAge = runnerAge;
+    }
+
     public Long getRunnerId() {
         return runnerId;
     }
